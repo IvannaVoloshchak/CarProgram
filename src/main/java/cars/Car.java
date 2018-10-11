@@ -4,22 +4,22 @@ public class Car {
     int id;
     Brand brand;
     String model;
-   int  year;
+    int year;
     Color color;
     double price;
     String registrationNumber;
-    static int uniqueId=0;
+    static int uniqueId = 0;
 
 
-    Car(Brand brand, String model, int  year, Color color, double price, String registrationNumber){
+    Car(Brand brand, String model, int year, Color color, double price, String registrationNumber) {
         uniqueId++;
-        id =uniqueId;
-        this.brand=brand;
-        this.model=model;
-        this.year=year;
-        this.color=color;
-        this.price=price;
-        this.registrationNumber=registrationNumber;
+        id = uniqueId;
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.price = price;
+        this.registrationNumber = registrationNumber;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Car {
                 "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", model=" + model +
-                ", year=" + year+
+                ", year=" + year +
                 ", color='" + color + '\'' +
                 ", price=" + price +
                 ", registrationNumber=" + registrationNumber +

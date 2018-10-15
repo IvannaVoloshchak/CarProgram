@@ -21,9 +21,16 @@ public class CarFactory {
 
         String registrationNumber = "VI" + getRandomNumberInRange(1000, 9999) + "IV";
 
-        Car car = new Car(brand, model, year, color, price, registrationNumber);
+        return new Car(brand, model, year, color, price, registrationNumber);
 
-        return car;
+    }
+
+    public static Car[] createArrayOfRandomized(int n) {
+        Car[] cars = new Car[n];
+        for (int i = 0; i < n; i++) {
+            cars[i] = createRandomized();
+        }
+        return cars;
     }
 
     private static int getRandomNumberInRange(int min, int max) {

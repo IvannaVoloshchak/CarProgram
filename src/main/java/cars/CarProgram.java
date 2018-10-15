@@ -2,38 +2,22 @@ package cars;
 
 public class CarProgram {
     public static void main(String[] args) {
-        Car car1 = CarFactory.createRandomized();
-        Car car2 = CarFactory.createRandomized();
-        Car car3 = CarFactory.createRandomized();
-        Car car4 = CarFactory.createRandomized();
-        Car car5 = CarFactory.createRandomized();
-        Car car6 = CarFactory.createRandomized();
-        Car car7 = CarFactory.createRandomized();
-        Car car8 = CarFactory.createRandomized();
-        Car[] cars = {car1, car2, car3, car4, car5, car6, car7, car8};
-        for (Car car : cars) {
-            System.out.println(car);
-        }
-        System.out.println("\n Car with brand Toyota ");
+        Car[] cars = CarFactory.createArrayOfRandomized(7);
+        System.out.println("New cars:");
+        System.out.println(CarLogic.view(cars));
 
-        for (Car car : cars) {
-            if (car.brand == Brand.TOYOTA) {
-                System.out.println(car);
-            }
-        }
-        System.out.println("\n Cars with brand Mazda, older than 5 years ");
+        Brand b = Brand.TOYOTA;
+        System.out.println("\nCar with brand \"" + b + "\":");
+        System.out.println(CarLogic.view(CarLogic.filter(cars, b)));
 
-        for (Car car : cars) {
-            if (car.brand == Brand.MAZDA && (2018 - car.year) >= 5) {
-                System.out.println(car);
-            }
-        }
-        System.out.println("\n Cars with price more than 40000, and years 2016 ");
+        String m = "Model12";
+        int a = 2;
+        System.out.println("\nCars with model \"" + m + "\", older than " + a + " years:");
+        System.out.println(CarLogic.view(CarLogic.filter(cars, m, a)));
 
-        for (Car car : cars) {
-            if (car.year == 2016 && car.price > 40000) {
-                System.out.println(car);
-            }
-        }
+        int y = 2016;
+        int p = 28000;
+        System.out.println("\nCars with price more than " + p + ", and years " + y + ":");
+        System.out.println(CarLogic.view(CarLogic.filter(cars, y, p)));
     }
 }

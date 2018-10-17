@@ -11,7 +11,7 @@ public class CarLogic {
         return sb.toString();
     }
 
-    public static Car[] filter(Car[] cars, Brand brand) {
+    public static Car[] filterByBrand(Car[] cars, Brand brand) {
         Car[] dest = new Car[cars.length];
         Car[] res;
         int i = 0;
@@ -25,7 +25,7 @@ public class CarLogic {
         return res;
     }
 
-    public static Car[] filter(Car[] cars, String model, int age) {
+    public static Car[] filterByModelAge(Car[] cars, String model, int age) {
         final int currYear = Calendar.getInstance().get(Calendar.YEAR);
         Car[] dest = new Car[cars.length];
         Car[] res;
@@ -41,7 +41,7 @@ public class CarLogic {
         return res;
     }
 
-    public static Car[] filter(Car[] cars, int year, double price) {
+    public static Car[] filterByYearPrice(Car[] cars, int year, double price) {
         Car[] dest = new Car[cars.length];
         Car[] res;
         int i = 0;

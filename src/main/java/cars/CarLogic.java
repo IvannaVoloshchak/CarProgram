@@ -16,7 +16,7 @@ public class CarLogic {
         Car[] res;
         int i = 0;
         for (Car car : cars) {
-            if (car != null && car.brand == brand) {
+            if (car != null && car.getBrand() == brand) {
                 dest[i++] = car;
             }
         }
@@ -31,8 +31,8 @@ public class CarLogic {
         Car[] res;
         int i = 0;
         for (Car car : cars) {
-            if (car != null && car.model.equalsIgnoreCase(model)
-                    && (currYear - car.year) > age) {
+            if (car != null && car.getModel().equalsIgnoreCase(model)
+                    && (currYear - car.getYear()) > age) {
                 dest[i++] = car;
             }
         }
@@ -46,7 +46,7 @@ public class CarLogic {
         Car[] res;
         int i = 0;
         for (Car car : cars) {
-            if (car != null && car.year == year && car.getPrice() > price) {
+            if (car != null && car.getYear() == year && car.getPrice() > price) {
                 dest[i++] = car;
             }
         }

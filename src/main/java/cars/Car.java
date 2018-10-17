@@ -2,10 +2,10 @@ package cars;
 
 public class Car {
     private static int nextUniqueId = 0;
-    public final int id;
-    public final Brand brand;
-    public final String model;
-    public final int year;
+    private int id;
+    private Brand brand;
+    private String model;
+    private int year;
     private Color color;
     private double price;
     private String registrationNumber;
@@ -19,6 +19,30 @@ public class Car {
         this.color = color;
         this.price = price;
         this.registrationNumber = registrationNumber;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public Color getColor() {
